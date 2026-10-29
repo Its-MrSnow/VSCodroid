@@ -147,6 +147,9 @@ class SplashActivity : AppCompatActivity() {
         // three above rather than inside them: it writes its own file whole, so
         // it neither needs a .bashrc to exist nor leaves anything behind in one.
         repair("the non-interactive shell env") { setup.createBashEnvFile() }
+        // The Ubuntu/proot layer (pkg, apt, ubuntu). After the line above because its
+        // sourcing line is in that file; it writes its own files whole.
+        repair("the Ubuntu environment") { com.vscodroid.setup.LinuxEnvironment(this).ensure() }
         // Beside the shell writers rather than inside them: pip.conf is its own
         // file with its own format, and it has to be reconciled every launch so a
         // changed wheelhouse URL reaches a device already installed.

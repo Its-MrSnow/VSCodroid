@@ -1215,11 +1215,14 @@ val requiredJniLibs = listOf(
     "libldmusl.so",
     "libmake.so",
     "libnode.so",
+    "libproot.so",
+    "libproot-loader.so",
     "libpython.so",
     "libripgrep.so",
     "libseccomp-shim.so",
     "libssh.so",
     "libssh-keygen.so",
+    "libtalloc.so",
     "libtmux.so",
 )
 
@@ -1234,11 +1237,14 @@ val jniLibProducers = mapOf(
     "libldmusl.so" to "scripts/download-musl-loader.sh",
     "libmake.so" to "scripts/download-termux-tools.sh",
     "libnode.so" to "scripts/download-node.sh",
+    "libproot.so" to "scripts/download-proot.sh",
+    "libproot-loader.so" to "scripts/download-proot.sh",
     "libpython.so" to "scripts/download-python.sh",
     "libripgrep.so" to "scripts/fetch-vscode-oss.sh",
     "libseccomp-shim.so" to "scripts/build-claude-shim.sh",
     "libssh.so" to "scripts/download-termux-tools.sh",
     "libssh-keygen.so" to "scripts/download-termux-tools.sh",
+    "libtalloc.so" to "scripts/download-proot.sh",
     "libtmux.so" to "scripts/download-termux-tools.sh",
 )
 

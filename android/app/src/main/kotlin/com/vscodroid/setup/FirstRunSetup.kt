@@ -2226,7 +2226,8 @@ esac
 
 # On-demand toolchain env vars
 [ -f "${'$'}HOME/.vscodroid/toolchain-env.sh" ] && . "${'$'}HOME/.vscodroid/toolchain-env.sh"
-"""
+"""  +
+            "\n# Ubuntu under proot: pkg, apt, ubuntu\n${LinuxEnvironment.SOURCE_LINE}\n"
         if (envFile.isFile && runCatching { envFile.readText() }.getOrNull() == content) return
 
         envFile.parentFile?.mkdirs()
