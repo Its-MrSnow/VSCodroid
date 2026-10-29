@@ -2132,6 +2132,14 @@ class FirstRunSetup(
     }
 
     /**
+     * Writes the Ubuntu/proot shell layer (pkg, apt, ubuntu). See [LinuxEnvironment].
+     * Safe to call on every launch: it rewrites only what changed.
+     */
+    fun ensureLinuxEnvironment() {
+        LinuxEnvironment(context).ensure()
+    }
+
+    /**
      * Writes the file `BASH_ENV` points at, which is what gives a NON-interactive
      * shell the commands the terminal has.
      *
